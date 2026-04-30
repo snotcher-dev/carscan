@@ -1,0 +1,220 @@
+.home-page {
+  padding-top: 90px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  overflow-x: hidden;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 8vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.upload-container {
+  margin-bottom: 80px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.action-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scan-button {
+  position: relative;
+  width: 100%;
+  background-color: var(--red);
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  padding: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px var(--red-glow);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.scan-button span {
+  position: relative;
+  z-index: 2;
+}
+
+.scan-button:not(.disabled):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(230, 48, 48, 0.5);
+}
+
+.shimmer-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.scan-button:not(.disabled):hover .shimmer-effect {
+  opacity: 1;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.scan-button.disabled {
+  background-color: var(--glass);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.demo-counter {
+  margin-top: 16px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.error-message {
+  margin-bottom: 20px;
+  color: var(--red);
+  background-color: rgba(230, 48, 48, 0.1);
+  padding: 16px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(230, 48, 48, 0.3);
+  font-weight: 600;
+  text-align: center;
+}
+
+.limit-message {
+  margin-top: 12px;
+  color: var(--red);
+  font-weight: 600;
+}
+
+.how-it-works {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 60px 40px;
+  border: 1px solid var(--border);
+  margin-top: 20px;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.how-it-works h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: var(--text-primary);
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.step-item {
+  flex: 1;
+  min-width: 250px;
+  max-width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgba(230, 48, 48, 0.1);
+  color: var(--red);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  border: 1px solid rgba(230,48,48,0.3);
+  box-shadow: 0 0 20px var(--red-glow);
+}
+
+.step-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.step-item p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .steps {
+    flex-direction: column;
+  }
+  .how-it-works {
+    padding: 1rem;
+  }
+  .main-content {
+    padding: 1rem;
+  }
+}

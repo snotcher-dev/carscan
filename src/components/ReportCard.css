@@ -1,0 +1,216 @@
+@keyframes floatGlowBuy {
+  0%, 100% { box-shadow: 0 0 15px rgba(0, 200, 83, 0.4); }
+  50% { box-shadow: 0 0 35px rgba(0, 200, 83, 0.8), 0 0 60px rgba(0, 200, 83, 0.4); }
+}
+
+@keyframes floatGlowAvoid {
+  0%, 100% { box-shadow: 0 0 15px var(--red-glow); }
+  50% { box-shadow: 0 0 35px rgba(230,48,48, 0.8), 0 0 60px var(--red-glow); }
+}
+
+.report-card {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.recommendation-badge {
+  position: relative;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  min-width: 250px;
+  max-width: 100%;
+  height: 80px;
+  border-radius: 40px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  color: white;
+  margin-top: -30px; /* Pull it slightly up towards hero */
+  z-index: 10;
+}
+
+.badge-buy {
+  background-color: #00c853;
+  animation: floatGlowBuy 2.5s infinite ease-in-out;
+}
+
+.badge-avoid {
+  background-color: var(--red);
+  animation: floatGlowAvoid 2.5s infinite ease-in-out;
+}
+
+.stats-row {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 100%;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.price-value {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-shadow: 0 0 10px rgba(255,255,255,0.1);
+  text-align: center;
+}
+
+.summary-card {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--red);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.section-title {
+  font-size: 0.9rem;
+  color: var(--red);
+  letter-spacing: 2px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.summary-card p {
+  color: #cccccc;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.issues-container {
+  padding: 10px 0;
+}
+
+.issues-heatmap-row {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.issues-container {
+  flex: 1;
+}
+
+.heatmap-container {
+  flex: 0 0 250px;
+}
+
+.issues-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.issue-chip {
+  background: rgba(230,48,48,0.1);
+  border: 1px solid rgba(230,48,48,0.3);
+  color: #ff6b6b;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0; 
+  animation: fadeInUp 0.5s forwards ease-out;
+}
+
+.no-issues {
+  color: #00c853;
+  font-style: italic;
+}
+
+.exterior-warning {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  border-left: 4px solid #f5a623;
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin-top: 20px;
+}
+
+.warning-title {
+  font-size: 0.95rem;
+  color: #f5a623;
+  letter-spacing: 2px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.exterior-warning p {
+  color: #cccccc;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.exterior-warning strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .stats-row {
+    flex-direction: column;
+  }
+  .price-value {
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+    white-space: nowrap;
+  }
+  .stat-card {
+    min-width: unset;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .recommendation-badge {
+    margin-top: -20px;
+  }
+  
+  .issues-heatmap-row {
+    flex-direction: column;
+  }
+  
+  .heatmap-container {
+    flex: none;
+    width: 100%;
+  }
+  
+  .stat-card, .summary-card, .issues-container, .heatmap-container, .exterior-warning {
+    padding: 20px;
+  }
+}

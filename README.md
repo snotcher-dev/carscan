@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# CarScan.ma
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CarScan.ma is an AI-Powered Car Inspection application built with React and the Google Gemini API. It allows users to upload a photo of a car and instantly receive a professional analysis including make, model, condition score, estimated price (in MAD), and a structural review.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **AI-Powered Diagnostics**: Uses `gemini-2.0-flash` to act as an expert car inspector.
+- **Drag & Drop Upload**: Smooth and intuitive image uploading.
+- **Modern UI**: Built securely with standard React practices and custom responsive CSS.
+- **Demo Limits**: Includes a local-storage based usage limit logic for showcasing limit systems.
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js (v18+)
+- npm or yarn
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup Instructions
 
-### `npm test`
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+   *(Note: This project uses `react-router-dom` on top of the default CRA dependencies).*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Configure Environment Variables:**
+   - Copy the `.env.example` file to `.env`:
+     ```bash
+     cp .env.example .env
+     ```
+   - Get an API key from [Google AI Studio](https://aistudio.google.com/) and add it to your `.env` file:
+     ```
+     REACT_APP_GEMINI_API_KEY=your_actual_api_key_here
+     ```
 
-### `npm run build`
+3. **Start the development server:**
+   ```bash
+   npm start
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Folder Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `src/components/`: Reusable UI components like `Navbar`, `UploadZone`, `ScanAnimation`, `ReportCard`, and `ScoreGauge`.
+- `src/pages/`: Main application pages `Home` and `Result`.
+- `src/services/`: Services for external API communication, such as `geminiService.js`.
+- `src/App.jsx` & `index.js`: App routing and global layout setups.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
 
-### `npm run eject`
+- React (Create React App)
+- React Router DOM
+- Plain CSS Variables + Flexbox layout
+- Google Gemini API (REST over `fetch`)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## License
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
