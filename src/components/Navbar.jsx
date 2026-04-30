@@ -11,7 +11,7 @@ const Navbar = () => {
           <span className="live-dot"></span>
         </Link>
         <div className="navbar-actions">
-          <Link to="/history" className="nav-compare-btn" style={{marginRight: '15px'}}>
+          <Link to="/history" className="nav-compare-btn">
             My Scans
           </Link>
           <Link to="/compare" className="nav-compare-btn">
