@@ -11,9 +11,9 @@
 }
 
 .heatmap-svg-wrapper {
-  width: 160px;
-  height: 320px;
-  margin-top: 10px;
+  width: 300px;
+  height: 600px;
+  margin-top: 20px;
   position: relative;
 }
 

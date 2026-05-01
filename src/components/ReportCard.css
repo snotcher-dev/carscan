@@ -114,10 +114,11 @@
   padding: 10px 0;
 }
 
-.issues-heatmap-row {
-  display: flex;
-  gap: 20px;
-  align-items: stretch;
+.analysis-section {
+  display: grid;
+  grid-template-columns: 1fr 450px;
+  gap: 30px;
+  align-items: start;
 }
 
 .issues-container {
@@ -125,7 +126,10 @@
 }
 
 .heatmap-container {
-  flex: 0 0 250px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 450px;
 }
 
 .issues-list {
@@ -201,12 +205,12 @@
     margin-top: -20px;
   }
   
-  .issues-heatmap-row {
-    flex-direction: column;
+  .analysis-section {
+    grid-template-columns: 1fr;
   }
   
   .heatmap-container {
-    flex: none;
+    min-width: unset;
     width: 100%;
   }
   

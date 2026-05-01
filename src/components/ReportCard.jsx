@@ -57,7 +57,7 @@ const ReportCard = ({ report }) => {
         <p>{summary}</p>
       </div>
 
-      <div className="issues-heatmap-row">
+      <div className="analysis-section">
         <div className="issues-container">
           <h3 className="section-title">DETECTED ISSUES</h3>
           {detected_issues && detected_issues.length > 0 ? (

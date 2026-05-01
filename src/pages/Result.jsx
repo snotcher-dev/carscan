@@ -20,6 +20,10 @@ const Result = () => {
   }
 
   const { report, imageUrl } = location.state;
+  
+  // Ensure consistency: round the score once here and use it everywhere
+  const finalScore = Math.round(report.condition_score || 0);
+  const normalizedReport = { ...report, condition_score: finalScore };
 
   const validYear = report.year && report.year.toLowerCase() !== 'unknown';
 
@@ -43,7 +47,7 @@ const Result = () => {
 
       <main className="result-content">
         <div className="report-container">
-          <ReportCard report={report} />
+          <ReportCard report={normalizedReport} />
         </div>
 
         <div className="action-footer">
@@ -51,7 +55,7 @@ const Result = () => {
             SCAN ANOTHER CAR
           </button>
           <PDFDownloadLink 
-            document={<PdfReport report={report} imageUrl={imageUrl} />} 
+            document={<PdfReport report={normalizedReport} imageUrl={imageUrl} />} 
             fileName={`CarScan-${report.make}-${report.model}.pdf`}
             className="download-pdf-btn"
             style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
